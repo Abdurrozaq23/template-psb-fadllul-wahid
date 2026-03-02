@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Formulir Pendaftaran PSB</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Gaya khusus cetak untuk meniru kertas putih asli (A4 format) */
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #f3f4f6;
+            color: #000;
+            padding: 2rem 0;
+        }
+
+        .page {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            position: relative;
+        }
+
+        .t-bold {
+            font-weight: bold;
+        }
+
+        .t-center {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        td,
+        th {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            vertical-align: top;
+            font-size: 13px;
+        }
+
+        .header-cell {
+            width: 35%;
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+
+        .signature-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .signature-line {
+            margin-top: 80px;
+            border-top: 1px solid #000;
+            width: 200px;
+            display: inline-block;
+            padding-top: 5px;
+        }
+
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+
+            .page {
+                box-shadow: none;
+                margin: 0;
+                border: none;
+                width: auto;
+                min-height: auto;
+                page-break-after: always;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tombol Aksi (disembunyikan saat print) -->
+    <div class="fixed top-4 right-4 flex gap-2 no-print">
+        <a href="dashboard.html"
+            class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-bold font-sans hover:bg-slate-700">Kembali</a>
+        <button onclick="window.print()"
+            class="bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-bold font-sans hover:bg-emerald-500 shadow-lg">Cetak
+            PDF</button>
+    </div>
+
+    <!-- HALAMAN 1: Biodata Pendaftar -->
+    <div class="page mb-8">
+        <!-- Kop Surat -->
+        <div class="flex items-center justify-between border-b-2 border-black pb-4 mb-6">
+            <div class="w-20 h-20 bg-emerald-700 text-white flex items-center justify-center rounded-lg font-bold text-2xl"
+                style="font-family: 'Plus Jakarta Sans', sans-serif;">AF</div>
+            <div class="t-center flex-1 px-4">
+                <h1 class="text-xl font-bold uppercase tracking-wider">Panitia Penerimaan Santri Baru</h1>
+                <h2 class="text-2xl font-bold uppercase my-1">Pesantren Modern Fadllul Wahid</h2>
+                <p class="text-xs">Jl. KH. Hasyim Asy'ari No. 99, Batu, Malang, Jawa Timur</p>
+                <p class="text-xs">Telepon: (0341) 123456 | Email: info@psbalfalah.ac.id | Website: www.psbalfalah.ac.id
+                </p>
+            </div>
+        </div>
+
+        <h3 class="text-lg t-center font-bold uppercase underline mb-6">Formulir Pendaftaran Calon Santri Baru<br><span
+                class="text-sm font-normal">Tahun Ajaran 2025/2026</span></h3>
+
+        <div
+            class="absolute top-[30mm] right-[20mm] border border-black w-[30mm] h-[40mm] flex items-center justify-center text-xs text-gray-400">
+            Foto 3x4
+        </div>
+
+        <!-- Data Pribadi -->
+        <h4 class="font-bold text-sm bg-gray-100 py-1 px-2 border border-gray-300 border-b-0 uppercase">A. Identitas
+            Calon Santri</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="header-cell">Nomor Pendaftaran</td>
+                    <td class="font-mono t-bold">REG-202508192</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Jalur Pendaftaran</td>
+                    <td>Reguler - Gelombang 1</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Nama Lengkap Sesuai Akta</td>
+                    <td class="t-bold uppercase">Ahmad Fauzi Al-Habsyi</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Nomor Induk Kependudukan (NIK)</td>
+                    <td>3501102908050001</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Tempat, Tanggal Lahir</td>
+                    <td>Kota Batu, 12 Agustus 2010</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Jenis Kelamin</td>
+                    <td>Laki-laki</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Kewarganegaraan</td>
+                    <td>Warga Negara Indonesia (WNI)</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Alamat Lengkap</td>
+                    <td>Jl. Pattimura No. 45, RT 02 RW 01, Kec. Batu, Kota Batu, Jawa Timur 65314</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Nomor WhatsApp Aktif</td>
+                    <td>0812-3456-7890</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Ukuran Seragam</td>
+                    <td>L (Large)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Data Prestasi / Asal -->
+        <h4 class="font-bold text-sm bg-gray-100 py-1 px-2 border border-gray-300 border-b-0 uppercase mt-6">B. Data
+            Akademik / Asal Sekolah</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="header-cell">Jenjang Tujuan</td>
+                    <td class="t-bold uppercase">MA (Madrasah Aliyah) - Ilmu Pengetahuan Alam</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Asal Sekolah</td>
+                    <td>SMP Negeri 1 Batu</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">NPSN / NISN</td>
+                    <td>20502123 / 0054321980</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Data Orang Tua -->
+        <h4 class="font-bold text-sm bg-gray-100 py-1 px-2 border border-gray-300 border-b-0 uppercase mt-6">C.
+            Identitas Orang Tua / Wali Kandung</h4>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="header-cell">Nama Lengkap Ayah</td>
+                    <td>Hasan Basri</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Pekerjaan Ayah</td>
+                    <td>Pegawai Negeri Sipil (PNS)</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Nama Lengkap Ibu</td>
+                    <td>Siti Aminah</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Pekerjaan Ibu</td>
+                    <td>Ibu Rumah Tangga</td>
+                </tr>
+                <tr>
+                    <td class="header-cell">Penghasilan Rata-Rata</td>
+                    <td>Rp 3.000.000 - Rp 5.000.000 / Bulan</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- HALAMAN 2: Surat Pernyataan -->
+    <div class="page">
+        <!-- Kop Surat -->
+        <div class="flex items-center justify-between border-b-2 border-black pb-4 mb-8">
+            <h1 class="text-xl font-bold uppercase mx-auto">Surat Pernyataan Calon Santri & Wali Santri</h1>
+        </div>
+
+        <p class="mb-4 text-justify leading-relaxed">Yang bertanda tangan di bawah ini:</p>
+
+        <table class="mb-6 !border-none">
+            <tr class="!border-none">
+                <td class="!border-none !p-1 w-[200px]">Nama Lengkap Orang Tua</td>
+                <td class="!border-none !p-1">: Hasan Basri</td>
+            </tr>
+            <tr class="!border-none">
+                <td class="!border-none !p-1 w-[200px]">Alamat (Sesuai KTP)</td>
+                <td class="!border-none !p-1">: Jl. Pattimura No. 45, RT 02 RW 01, Batu</td>
+            </tr>
+            <tr class="!border-none">
+                <td class="!border-none !p-1 w-[200px]">Nomor Handphone (Aktif)</td>
+                <td class="!border-none !p-1">: 0812-9876-5432</td>
+            </tr>
+        </table>
+
+        <p class="mb-2 text-justify leading-relaxed">Adalah benar orang tua kandung / wali sah dari calon santri:</p>
+
+        <table class="mb-6 !border-none">
+            <tr class="!border-none">
+                <td class="!border-none !p-1 w-[200px]">Nama Lengkap Calon Santri</td>
+                <td class="!border-none !p-1">: <span class="t-bold uppercase">Ahmad Fauzi Al-Habsyi</span></td>
+            </tr>
+            <tr class="!border-none">
+                <td class="!border-none !p-1 w-[200px]">Jenjang / Program Studi</td>
+                <td class="!border-none !p-1">: MA (Madrasah Aliyah) - IPA</td>
+            </tr>
+        </table>
+
+        <p class="mb-4 text-justify font-bold leading-relaxed">Menyatakan dengan sadar dan sesungguhnya bahwa:</p>
+
+        <ol class="list-decimal pl-6 space-y-3 text-justify leading-relaxed mb-10">
+            <li>Seluruh data dan dokumen kependudukan yang diisikan dalam formulir Pendaftaran Santri Baru Fadllul Wahid ini
+                adalah <strong>BENAR</strong> sesuai dengan aslinya tanpa ada rekayasa bentuk apapun.</li>
+            <li>Mengizinkan serta menyerahkan mandat sepenuhnya kepada pihak Pesantren Modern Fadllul Wahid untuk membimbing,
+                mendidik, serta menerapkan seluruh aturan tata tertib kepada putra/putri kami.</li>
+            <li>Apabila di kemudian hari terbukti melanggar tata tertib dan disiplin pesantren, maka kami siap menerima
+                sanksi yang berlaku hingga sanksi pemberhentian (Drop Out) atau dikembalikan kepada Orang Tua tanpa
+                menuntut pengembalian biaya pendidikan.</li>
+            <li>Sanggup dan bersedia melunasi seluruh kewajiban administrasi (bulanan maupun tahunan) sesuai surat
+                ketetapan pesantren dengan tepat waktu.</li>
+        </ol>
+
+        <p class="mb-8 text-justify leading-relaxed">Demikian surat pernyataan ini kami buat dalam keadaan sehat jasmani
+            dan rohani tanpa ada paksaan dari pihak manapun.</p>
+
+        <!-- Signature Area -->
+        <div class="signature-box flex justify-between">
+            <div class="text-center w-64">
+                <p>Mengetahui & Menyetujui,</p>
+                <p class="mb-24"><strong>Calon Santri</strong></p>
+                <span class="signature-line w-48 text-sm">Ahmad Fauzi Al-Habsyi</span>
+            </div>
+
+            <div class="text-center w-64">
+                <p>Kota Batu, .................... 2025</p>
+                <p class="mb-4"><strong>Orang Tua / Wali Santri</strong></p>
+                <div
+                    class="inline-block border border-dashed border-gray-400 p-2 text-[10px] text-gray-400 mb-8 mx-auto w-16 h-20 opacity-50">
+                    Meterai<br>10.000</div><br>
+                <span class="signature-line w-48 text-sm">Hasan Basri</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

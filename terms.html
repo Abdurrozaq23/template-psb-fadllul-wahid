@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syarat & Ketentuan - PSB Fadllul Wahid</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #05050A;
+            color: #f8fafc;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.1), transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(45, 212, 191, 0.1), transparent 50%);
+            filter: blur(40px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Typography overrides for readable legal text */
+        .prose h2 {
+            @apply text-white font-bold text-xl mt-12 mb-5 tracking-tight flex items-center gap-3;
+        }
+
+        .prose h3 {
+            @apply text-teal-400 font-bold text-base mt-8 mb-4 tracking-wide;
+        }
+
+        .prose p {
+            @apply text-slate-400 font-light text-[15px] leading-[1.8] mb-6 text-justify;
+        }
+
+        .prose ul {
+            @apply list-disc list-outside pl-6 space-y-3 mb-8 text-slate-400 font-light text-[15px] leading-[1.8] text-justify;
+        }
+
+        .prose li::marker {
+            @apply text-indigo-500;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-teal-500/30">
+
+    <div class="mesh-bg pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-[#05050A]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="#login"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white border border-white/10 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </a>
+                <span class="font-bold text-white tracking-widest uppercase text-sm">Kembali</span>
+            </div>
+
+            <div class="hidden sm:flex gap-4">
+                <a href="terms.html" class="text-xs font-bold text-teal-400 border-b border-teal-400 pb-1">Syarat &
+                    Ketentuan</a>
+                <a href="privacy.html"
+                    class="text-xs font-bold text-slate-500 hover:text-white transition-colors">Kebijakan Privasi</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 py-10 lg:py-16">
+
+        <div class="mb-12">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Syarat & <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400">Ketentuan</span>
+            </h1>
+            <p class="text-slate-400 text-sm flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Pembaruan Terakhir: 1 Januari 2025
+            </p>
+        </div>
+
+        <div class="glass-card rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden">
+            <!-- Glow behind text -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[100px] pointer-events-none">
+            </div>
+
+            <div class="prose max-w-none relative z-10">
+                <p>Selamat datang di layanan Pendaftaran Santri Baru (PSB) online Yayasan Pesantren Fadllul Wahid.
+                    Dengan mendaftar dan menggunakan layanan web pendaftaran ini, Anda (Wali Santri / Calon Santri)
+                    menyetujui untuk terikat secara hukum dengan syarat dan ketentuan di bawah ini. Harap membacanya
+                    dengan saksama.</p>
+
+                <h2>1. Definisi dan Cakupan</h2>
+                <p>Layanan PSB adalah portal digital resmi milik Yayasan Fadllul Wahid yang digunakan untuk memproses
+                    pendataan identitas awal, memfasilitasi pembayaran tagihan formulir pendaftaran, hingga mencetak
+                    berkas pendaftaran santri/siswa baru untuk jenjang MTs maupun MA.</p>
+
+                <h2>2. Ketentuan Pendaftaran Akun</h2>
+                <p>Untuk mengajukan pendaftaran, Anda diwajibkan melakukan autentikasi menggunakan akun Google yang sah
+                    dan aktif. Akun email ini akan digunakan sebagai media komunikasi dan Single Sign-On (SSO) selama
+                    akun calon santri tersebut aktif dalam sistem PSB kami.</p>
+                <ul>
+                    <li>Anda bertanggung jawab menjaga kerahasiaan kepemilikan akses akun Google tersebut.</li>
+                    <li>Satu akun Google disarankan hanya digunakan untuk pendaftaran satu (1) Calon Santri demi
+                        kerapian data.</li>
+                    <li>Kami berhak melakukan penangguhan atau pemblokiran akun apabila ditemukan adanya indikasi
+                        penyalahgunaan, manipulasi pendaftaran massal (spam), atau aktivitas mencurigakan.</li>
+                </ul>
+
+                <h2>3. Tahap Pembayaran & Kebijakan <em>Refund</em></h2>
+                <p>Pendaftaran diwajibkan melunasi Biaya Pendaftaran Formulir awal sesuai nominal yang ditetapkan (Rp
+                    150.000,-). Dana ini digunakan untuk biaya administrasi sinkronisasi sistem, tes observasi, dan
+                    berkas pencetakan.</p>
+                <ul>
+                    <li>Pembayaran difasilitasi oleh Payment Gateway terverifikasi, menggunakan saluran bank, QRIS,
+                        maupun ritel (Indomaret/Alfamart).</li>
+                    <li>Apabila calon santri <strong>membatalkan diri</strong>, atau tidak jadi menempati kuota
+                        pendaftaran, maka Uang Biaya Pendaftaran yang telah ditransfer <strong>TIDAK DAPAT DIKEMBALIKAN
+                            (NO REFUND)</strong>. Hal ini sesuai dengan kebijakan administrasi panitia.</li>
+                    <li>Panitia akan melakukan validasi ulang. Pembayaran di luar Gateway resmi kami tidak diakui
+                        apabila terjadi gagal sistem antar-pihak bank.</li>
+                </ul>
+
+                <h2>4. Akurasi Data Biodata</h2>
+                <p>Seluruh kolom isian identitas santri, orang tua/wali, serta dokumen kependudukan yang diisi dalam
+                    form biodata online <strong>harus murni sesuai realita dan data pada Dokumen Kenegaraan yang
+                        sah</strong> (Surat Kelahiran, Asli Kartu Keluarga, Asli KTP).</p>
+                <p>Pihak Yayasan Fadllul Wahid <strong>BERHAK MEMBATALKAN</strong> secara sepihak kelulusan Calon Santri
+                    yang bersangkutan, meski telah melalui seluruh rangkaian tes/membayar, apabila terbukti di kemudian
+                    hari terdapat pemalsuan dokumen atau pengisian keliru yang disengaja.</p>
+
+                <h2>5. Pengikatan Hukum (Surat Pernyataan)</h2>
+                <p>Langkah akhir pendaftaran berupa pencetakan File PDF Formulir yang mana di dalamnya termuat Surat
+                    Ketersediaan Santri dan Surat Ketersediaan Wali Santri. Dokumen elektronik ini tunduk pada hukum
+                    perjanjian. Validitas final didapatkan setelah formulir fisik tersebut ditandatangani di atas
+                    meterai asli Rp. 10.000,- saat tahapan Tes Verifikasi Luring (Offline).</p>
+
+                <h2>6. Pemeliharaan dan Gangguan Sistem</h2>
+                <p>Kami secara berkala melakukan update portal demi keamanan data Anda. Yayasan tidak bertanggung jawab
+                    atas kerugian finansial atau keterlambatan data akibat Force Majeure, <em>down-time</em> bank
+                    eksternal, gangguan provider telekomunikasi, ataupun faktor alam di luar kendali teknis tim IT
+                    Fadllul Wahid.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center text-slate-500 font-bold text-[10px] tracking-widest uppercase">
+            Yayasan Pesantren Fadllul Wahid &copy; 2025
+        </div>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Cara Daftar - PSB Fadllul Wahid</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #05050A;
+            color: #f8fafc;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at top left, rgba(79, 70, 229, 0.1), transparent 50%),
+                radial-gradient(circle at bottom right, rgba(45, 212, 191, 0.1), transparent 50%);
+            filter: blur(40px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #4f46e5, #14b8a6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-indigo-500/30">
+
+    <div class="mesh-bg pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-[#05050A]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white border border-white/10 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </a>
+                <span class="font-bold text-white tracking-widest uppercase text-sm">Alur Daftar</span>
+            </div>
+            <a href="index.html"
+                class="text-xs font-bold bg-white text-[#05050A] px-5 py-2.5 rounded-xl hover:bg-slate-200 transition-colors">Masuk
+                Portal</a>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8 py-12 lg:py-16">
+
+        <div class="text-center mb-16 sm:mb-24">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
+                4 Langkah <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-teal-400">Mudah</span>
+            </h1>
+            <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed font-light">
+                Proses Pendaftaran Santri Baru (PSB) Fadllul Wahid kini dapat diselesaikan dalam hitungan menit dari layar
+                smartphone Anda.
+            </p>
+        </div>
+
+        <div class="relative pl-8 lg:pl-0">
+            <!-- Asymmetrical Line (Desktop) -->
+            <div class="hidden lg:block absolute top-[20px] bottom-0 left-[2.5rem] w-[2px] bg-white/5"></div>
+            <!-- Side Line (Mobile Only) -->
+            <div class="lg:hidden absolute top-[20px] bottom-0 left-[31px] w-[2px] bg-white/5"></div>
+
+            <div class="space-y-16 sm:space-y-24">
+
+                <!-- STEP 1 -->
+                <div class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between group">
+                    <div
+                        class="absolute -left-8 lg:left-0 lg:-translate-x-1/2 w-16 h-16 flex items-center justify-center bg-[#05050A] border-[3px] border-white/10 rounded-full text-3xl font-black step-number shadow-lg z-10">
+                        1</div>
+                    <div class="w-full lg:w-[45%] lg:ml-24 pb-6 lg:pb-0">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Akses Portal
+                            Menggunakan Google</h3>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Pilih tombol <strong
+                                class="text-indigo-300">"Continue with Google"</strong> di halaman depan. Pilih akun
+                            Google pribadi Anda, dan profil pendaftaran akan otomatis terbuat tanpa perlu mengetik email
+                            & password berulang kali.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div
+                    class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between group pl-4 lg:pl-0">
+                    <!-- Subtle Glow -->
+                    <div
+                        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-teal-500/10 blur-[80px] rounded-full z-0">
+                    </div>
+                    <div
+                        class="absolute -left-12 lg:left-0 lg:-translate-x-1/2 w-16 h-16 flex items-center justify-center bg-[#05050A] border-[3px] border-white/10 rounded-full text-3xl font-black step-number shadow-lg z-10 transition-colors group-hover:border-teal-500/50">
+                        2</div>
+
+                    <div class="w-full lg:w-[45%] lg:ml-24 pb-6 lg:pb-0 z-10">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Aktivasi & Bayar
+                            Tagihan Formulir</h3>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Begitu masuk Dashboard, Anda akan
+                            melihat tagihan Pendaftaran senilai Rp 150.000. Tersedia bayar via <strong
+                                class="text-teal-300">QRIS (Gopay/DANA/M-Banking)</strong> secara otomatis (instan)
+                            alias tidak perlu upload bukti transfer. Formulir online otomatis TERBUKA detik itu jg.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div
+                    class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between group pl-4 lg:pl-0">
+                    <div
+                        class="absolute -left-12 lg:left-0 lg:-translate-x-1/2 w-16 h-16 flex items-center justify-center bg-[#05050A] border-[3px] border-white/10 rounded-full text-3xl font-black step-number shadow-lg z-10 transition-colors group-hover:border-indigo-500/50">
+                        3</div>
+                    <div class="w-full lg:w-[45%] lg:ml-24 pb-6 lg:pb-0">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Pengisian Biodata
+                            Lengkap</h3>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Masuk ke menu <strong
+                                class="text-slate-200">Form Biodata</strong>. Isi setiap halaman step-by-step mencakup:
+                            Data Identitas (NIK, Tempat Lahir dll), Data Sekolah Asal & Pemilihan Jalur/Seragam, serta
+                            Informasi Orang Tua/Keluarga Pendukung secara mendetail.</p>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div
+                    class="relative flex flex-col lg:flex-row items-start lg:items-center justify-between group pl-4 lg:pl-0">
+                    <div
+                        class="absolute -left-12 lg:left-0 lg:-translate-x-1/2 w-16 h-16 flex items-center justify-center bg-gradient-to-br from-indigo-500 to-teal-400 rounded-full text-2xl font-black text-[#05050A] shadow-[0_0_20px_rgba(45,212,191,0.4)] z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="w-full lg:w-[45%] lg:ml-24">
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Finalisasi & Unduh
+                            Berkas PDF</h3>
+                        <p class="text-slate-400 text-sm font-light leading-relaxed">Setelah menekan 'Finalisasi Data',
+                            halaman <em>Pendaftaran Berhasil</em> akan terbuka. Sistem otomatis menggenerasi <strong
+                                class="text-indigo-300">File Dokumen PDF</strong> Surat Pernyataan + ID Registrasi yang
+                            WAJIB dicetak (di-print), ditempeli Meterai Rp. 10rb, dan tanda tangan sebagai validasi
+                            dibawa hari Tes Observasi / Verifikasi.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Start Cta -->
+        <div class="mt-24 sm:mt-32 w-full text-center">
+            <a href="index.html"
+                class="inline-flex items-center justify-center gap-3 bg-white text-[#05050A] px-8 py-5 rounded-2xl font-bold transition-transform hover:scale-105 active:scale-95">
+                Mulai Pendaftaran Anda
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </a>
+        </div>
+
+    </main>
+
+    <footer
+        class="mt-8 py-8 border-t border-white/5 text-center text-slate-500 text-[10px] uppercase tracking-widest font-bold">
+        PSB AL-FALAH <span class="mx-2">•</span> 2025/2026 V7
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bantuan PSB Fadllul Wahid</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #05050A;
+            color: #f8fafc;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 10% 90%, rgba(79, 70, 229, 0.1), transparent 50%),
+                radial-gradient(circle at 90% 10%, rgba(45, 212, 191, 0.1), transparent 50%);
+            filter: blur(40px);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-teal-500/30">
+
+    <div class="mesh-bg pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-[#05050A]/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <a href="index.html"
+                    class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white border border-white/10 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </a>
+                <span class="font-bold text-white tracking-widest uppercase text-sm">Pusat Bantuan</span>
+            </div>
+            <a href="index.html"
+                class="text-xs font-bold bg-white text-[#05050A] px-5 py-2.5 rounded-xl hover:bg-slate-200 transition-colors">Masuk
+                Portal</a>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto p-4 sm:p-6 lg:p-8 py-12 lg:py-16">
+
+        <div class="text-center mb-12 sm:mb-16">
+            <div
+                class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-teal-500/20 text-teal-400 mb-6 border border-white/10">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                    </path>
+                </svg>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Ada yang bisa <br
+                    class="sm:hidden"><span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-indigo-400">kami
+                    bantu?</span></h1>
+            <p class="text-slate-400 text-sm max-w-md mx-auto leading-relaxed font-light">
+                Temukan jawaban cepat atas pertanyaan yang sering diajukan mengenai pendaftaran santri baru.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="space-y-4" x-data="{ active: null }">
+
+            <!-- Item 1 -->
+            <div class="glass-card rounded-[1.5rem] overflow-hidden transition-all duration-300 relative">
+                <!-- Hover/Active Line -->
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-teal-400"
+                    x-show="active === 1" x-transition.opacity></div>
+
+                <button @click="active = active === 1 ? null : 1"
+                    class="w-full flex justify-between items-center p-6 sm:p-8 text-left focus:outline-none bg-white/[0.01] hover:bg-white/[0.03]">
+                    <span class="font-bold text-white pr-4">Apakah pendaftaran dapat dilakukan offline ke pondok?</span>
+                    <span
+                        class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full border border-white/10 text-teal-400 transition-transform duration-300 bg-[#05050A]"
+                        :class="{ 'rotate-180': active === 1 }">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+                <div x-show="active === 1" x-collapse x-cloak>
+                    <div
+                        class="px-6 sm:px-8 pb-8 text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-6 font-light">
+                        Pendaftaran tahap awal (registrasi & isi biodata) dilakukan **sepenuhnya secara online** via
+                        portal ini. Wali santri baru diharapkan datang ke pesantren (offline) hanya saat agenda tes
+                        seleksi wawancara dan penyerahan berkas fisik (verifikasi akhir).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="glass-card rounded-[1.5rem] overflow-hidden transition-all duration-300 relative">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-teal-400"
+                    x-show="active === 2" x-transition.opacity></div>
+                <button @click="active = active === 2 ? null : 2"
+                    class="w-full flex justify-between items-center p-6 sm:p-8 text-left focus:outline-none bg-white/[0.01] hover:bg-white/[0.03]">
+                    <span class="font-bold text-white pr-4">Metode pembayaran apa saja yang diklaim instan
+                        (realtime)?</span>
+                    <span
+                        class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full border border-white/10 text-teal-400 transition-transform duration-300 bg-[#05050A]"
+                        :class="{ 'rotate-180': active === 2 }">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+                <div x-show="active === 2" x-collapse x-cloak>
+                    <div
+                        class="px-6 sm:px-8 pb-8 text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-6 font-light">
+                        Sistem Midtrans Fadllul Wahid mendukung:
+                        <ul class="list-disc pl-5 mt-3 space-y-2 text-slate-300 marker:text-teal-500 font-medium">
+                            <li>QRIS (OVO, Gopay, Dana, ShopeePay, m-Banking)</li>
+                            <li>Virtual Account Mandiri, BNI, BRI, Permata</li>
+                            <li>Kasir Alfamart & Indomaret</li>
+                        </ul>
+                        Begitu Anda bayar, form biodata akan **langsung terbuka saat itu juga** tanpa perlu upload bukti
+                        bayar.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="glass-card rounded-[1.5rem] overflow-hidden transition-all duration-300 relative">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 to-teal-400"
+                    x-show="active === 3" x-transition.opacity></div>
+                <button @click="active = active === 3 ? null : 3"
+                    class="w-full flex justify-between items-center p-6 sm:p-8 text-left focus:outline-none bg-white/[0.01] hover:bg-white/[0.03]">
+                    <span class="font-bold text-white pr-4">Bagaimana jika saya mengunci data yang salah input?</span>
+                    <span
+                        class="w-8 h-8 shrink-0 flex items-center justify-center rounded-full border border-white/10 text-teal-400 transition-transform duration-300 bg-[#05050A]"
+                        :class="{ 'rotate-180': active === 3 }">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </span>
+                </button>
+                <div x-show="active === 3" x-collapse x-cloak>
+                    <div
+                        class="px-6 sm:px-8 pb-8 text-slate-400 text-sm leading-relaxed border-t border-white/5 pt-6 font-light">
+                        Jika sudah klik "Finalisasi Data", maka formulir akan terkunci menjadi PDF. Anda tidak bisa
+                        mengedit ulang dari dashboard. Untuk memperbaikinya, catat ID Pendaftaran Anda dan **Hubungi
+                        Admin** (via WhatsApp) agar akses dibuka (Reset Form).
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Contact Support -->
+        <div class="mt-16 text-center glass-card rounded-[2rem] p-10 relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-b from-indigo-500/10 to-transparent"></div>
+
+            <h3 class="text-white font-bold text-xl mb-3 relative z-10">Punya Pertanyaan Lain?</h3>
+            <p class="text-slate-400 text-sm mb-8 font-light relative z-10">Tim Customer Support Panitia PSB Fadllul Wahid
+                siap melayani kendala Anda di jam kerja (08:00 - 15:00 WIB).</p>
+
+            <a href="#"
+                class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-teal-500 to-emerald-500 text-[#05050A] px-8 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-teal-500/30 hover:scale-105 active:scale-95 relative z-10">
+                <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.347-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+                Chat WhatsApp Admin
+            </a>
+        </div>
+    </main>
+
+</body>
+
+</html>

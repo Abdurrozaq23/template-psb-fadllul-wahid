@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSB Fadllul Wahid - Isi Biodata Pendaftaran</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #05050A;
+            color: #f8fafc;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .mesh-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(ellipse at top right, rgba(45, 212, 191, 0.1), transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(79, 70, 229, 0.1), transparent 50%);
+        }
+
+        /* Bento Glass Cards */
+        .bento-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Glass Input Styles */
+        div:focus-within>label {
+            color: #38bdf8;
+            /* Sky-400 */
+            transform: translateX(4px);
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]),
+        select,
+        textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 14px 16px;
+            font-size: 14px;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):hover,
+        select:hover,
+        textarea:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):focus,
+        select:focus,
+        textarea:focus {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(45, 212, 191, 0.6);
+            box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #475569;
+        }
+
+        label {
+            display: block;
+            font-size: 11px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            margin-left: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            margin-top: 32px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        option,
+        optgroup {
+            background-color: #0f172a;
+            /* Slate-900 */
+            color: #f8fafc;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* Floating Mobile Nav */
+        .floating-nav {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 -10px 40px -10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen pb-28 antialiased selection:bg-teal-500/30">
+
+    <div class="mesh-bg pointer-events-none"></div>
+
+    <!-- Header (Disamakan dengan Dashboard) -->
+    <header
+        class="sticky top-0 z-40 bg-[#05050A]/80 lg:bg-transparent backdrop-blur-xl lg:backdrop-blur-none px-6 py-6 flex items-center justify-between max-w-5xl mx-auto w-full border-b border-white/5 lg:border-none">
+        <div>
+            <h1 class="text-xl font-bold text-white tracking-tight">Isi Biodata</h1>
+            <p class="text-xs text-slate-400 font-medium hidden sm:block">Lengkapi identitas untuk pendaftaran</p>
+        </div>
+        <div class="flex items-center gap-3 bg-white/5 pr-4 pl-1 py-1 rounded-full border border-white/10">
+            <div class="w-8 h-8 rounded-full overflow-hidden">
+                <img src="https://ui-avatars.com/api/?name=Ahmad+Fauzi&background=4f46e5&color=fff" alt="User">
+            </div>
+            <span class="text-sm font-semibold text-white hidden sm:block">Ahmad F.</span>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 w-full">
+
+        <!-- Welcome area -->
+        <div class="mb-8 hidden lg:block">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Identitas Pribadi Lengkap
+            </h2>
+            <p class="text-slate-400 text-sm mt-2">Pastikan data yang dimasukkan akurat dan sesuai dokumen resmi.
+                Seluruh isian di bawah ini wajib diisi kecuali yang bertanda opsional.</p>
+        </div>
+
+        <!-- Main Form Area -->
+        <div class="bento-card p-6 sm:p-10 relative overflow-hidden mb-8">
+            <!-- Form Decorative Elements -->
+            <div
+                class="absolute -left-20 -bottom-20 w-64 h-64 bg-indigo-500/5 rounded-full blur-[80px] pointer-events-none">
+            </div>
+
+            <form action="success.html" class="space-y-12 relative z-10">
+
+                <!-- SECTION 1: Data Pribadi  -->
+                <div class="space-y-5">
+
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4 mb-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-sm border border-teal-500/30">
+                            1</div>
+                        <h3 class="text-xl font-bold text-white tracking-wide">Data Diri Santri</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label>Nama Lengkap Santri</label>
+                            <input type="text" name="name" placeholder="Sesuai Akta Kelahiran" required />
+                        </div>
+                        <div>
+                            <label>Nama Panggilan</label>
+                            <input type="text" name="nickname" placeholder="Nama Panggilan" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label>Nomor NIK</label>
+                            <input type="tel" name="nik" placeholder="16 Digit Angka" maxlength="16" required />
+                        </div>
+                        <div>
+                            <label>Nomor NISN</label>
+                            <input type="tel" name="nisn" placeholder="10 Digit Angka" maxlength="10" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-5">
+                        <div>
+                            <label>Tempat Lahir</label>
+                            <input type="text" name="birth_place" placeholder="Kota" required />
+                        </div>
+                        <div>
+                            <label>Tgl. Lahir</label>
+                            <input type="date" name="birth_date"
+                                class="text-white [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert-[0.7]"
+                                required />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label>Jenis Kelamin</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <!-- Trigger Button -->
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                    <span x-text="selected === '' ? 'Pilih Opsi' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih Opsi</span>
+                                    <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                        :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <!-- Hidden Original Input for Form Submission -->
+                                <input type="hidden" name="gender_id"
+                                    :value="selected === 'Laki-laki' ? '1' : (selected === 'Perempuan' ? '2' : '')"
+                                    required>
+
+                                <!-- Dropdown Menu -->
+                                <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                                    x-transition:leave-end="opacity-0 scale-95 -translate-y-2"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden"
+                                    style="display: none;">
+                                    <ul class="py-1 text-sm text-slate-300">
+                                        <li>
+                                            <button type="button" @click="selected = 'Laki-laki'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Laki-laki</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" @click="selected = 'Perempuan'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Perempuan</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>No. HP / WhatsApp Aktif</label>
+                            <input type="tel" name="phone" placeholder="0812-XXXX..." required />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label>Email (Opsional)</label>
+                            <input type="email" name="email" placeholder="contoh@gmail.com" />
+                        </div>
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <label>Anak Ke-</label>
+                                <input type="number" name="child_order" placeholder="Mis. 1" min="1" required />
+                            </div>
+                            <div>
+                                <label>Dari (Saudara)</label>
+                                <input type="number" name="sibling_count" placeholder="Mis. 3" min="1" required />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title">
+                        <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6">
+                            </path>
+                        </svg>
+                        Tempat Tinggal
+                    </div>
+
+                    <div>
+                        <label>Alamat Lengkap</label>
+                        <textarea name="address_street" rows="2" placeholder="Nama Jalan, Blok, RT/RW..."
+                            required></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+                        <div>
+                            <label>Provinsi</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 transition-all flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06]' : ''">
+                                    <span x-text="selected === '' ? 'Pilih' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'"
+                                        class="truncate">Pilih</span>
+                                    <svg class="w-4 h-4 text-slate-500 shrink-0" :class="open ? 'rotate-180' : ''"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" name="province_id" x-model="selected" required>
+                                <div x-show="open"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                    style="display: none;">
+                                    <ul class="py-1 text-sm text-slate-300">
+                                        <li><button type="button" @click="selected = 'Jawa Tengah'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">Jawa
+                                                Tengah</button></li>
+                                        <li><button type="button" @click="selected = 'Jawa Timur'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">Jawa
+                                                Timur</button></li>
+                                        <li><button type="button" @click="selected = 'Jawa Barat'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">Jawa
+                                                Barat</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Kab / Kota</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 transition-all flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06]' : ''">
+                                    <span x-text="selected === '' ? 'Pilih' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'"
+                                        class="truncate">Pilih</span>
+                                    <svg class="w-4 h-4 text-slate-500 shrink-0" :class="open ? 'rotate-180' : ''"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" name="regency_id" x-model="selected" required>
+                                <div x-show="open"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                    style="display: none;">
+                                    <ul class="py-1 text-sm text-slate-300">
+                                        <li><button type="button" @click="selected = 'Grobogan'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">Grobogan</button>
+                                        </li>
+                                        <li><button type="button" @click="selected = 'Semarang'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">Semarang</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Kecamatan</label>
+                            <input type="text" name="district_id" placeholder="Cth: Wirosari" required />
+                        </div>
+                        <div>
+                            <label>Desa & Kode Pos</label>
+                            <div class="flex gap-2">
+                                <input type="text" name="village_id" placeholder="Desa" class="w-2/3" required />
+                                <input type="text" name="postal_code" placeholder="Kode"
+                                    class="w-1/3 px-2 text-center" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Asal Sekolah -->
+                <div class="space-y-5 pt-8">
+
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4 mb-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm border border-indigo-500/30">
+                            2</div>
+                        <h3 class="text-xl font-bold text-white tracking-wide">Asal Sekolah & Pilihan Unit</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div>
+                            <label>Jalur Pendaftaran</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                    <span x-text="selected === '' ? 'Pilih Jalur' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih Jalur</span>
+                                    <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                        :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" name="jalur"
+                                    :value="selected === 'Reguler' ? '1' : (selected === 'Beasiswa Tahfidz' ? '2' : '')"
+                                    required>
+
+                                <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden"
+                                    style="display: none;">
+                                    <ul class="py-1 text-sm text-slate-300">
+                                        <li>
+                                            <button type="button" @click="selected = 'Reguler'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Reguler</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" @click="selected = 'Beasiswa Tahfidz'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Beasiswa
+                                                Tahfidz</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Unit / Jenjang Pendidikan</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                    <span x-text="selected === '' ? 'Pilih Unit' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih Unit</span>
+                                    <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                        :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" name="unit_id" x-model="selected" required>
+
+                                <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                    x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                    x-transition:leave="transition ease-in duration-150"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-60 custom-scrollbar"
+                                    style="display: none;">
+
+                                    <div
+                                        class="px-3 py-2 text-xs font-bold tracking-widest text-slate-500 box-bg-slate-800 uppercase mt-1">
+                                        Ula (Al-Kutab)</div>
+                                    <button type="button" @click="selected = 'Ula - Putra'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6">Ula
+                                        - Putra</button>
+                                    <button type="button" @click="selected = 'Ula - Putri'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6 border-b border-white/5 pb-3">Ula
+                                        - Putri</button>
+
+                                    <div
+                                        class="px-3 py-2 text-xs font-bold tracking-widest text-slate-500 box-bg-slate-800 uppercase mt-1">
+                                        Wustho</div>
+                                    <button type="button" @click="selected = 'Wustho - Putra'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6">Wustho
+                                        - Putra</button>
+                                    <button type="button" @click="selected = 'Wustho - Putri'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6 border-b border-white/5 pb-3">Wustho
+                                        - Putri</button>
+
+                                    <div
+                                        class="px-3 py-2 text-xs font-bold tracking-widest text-slate-500 box-bg-slate-800 uppercase mt-1">
+                                        Ulya</div>
+                                    <button type="button" @click="selected = 'Ulya - Putra'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6">Ulya
+                                        - Putra</button>
+                                    <button type="button" @click="selected = 'Ulya - Putri'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6 border-b border-white/5 pb-3">Ulya
+                                        - Putri</button>
+
+                                    <div
+                                        class="px-3 py-2 text-xs font-bold tracking-widest text-slate-500 box-bg-slate-800 uppercase mt-1">
+                                        Mahad Aly</div>
+                                    <button type="button" @click="selected = 'Mahad Aly - Putra'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6">Mahad
+                                        Aly - Putra</button>
+                                    <button type="button" @click="selected = 'Mahad Aly - Putri'; open = false"
+                                        class="w-full text-left px-4 py-2 text-sm text-slate-300 hover:bg-teal-500/10 hover:text-teal-400 transition-colors pl-6 pb-3">Mahad
+                                        Aly - Putri</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Pilihan Ukuran Seragam</label>
+                        <div class="flex flex-wrap gap-3 mt-1">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="shirt_size" class="peer sr-only" value="S" required>
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 peer-checked:bg-gradient-to-br peer-checked:from-indigo-500 peer-checked:to-teal-400 peer-checked:border-transparent peer-checked:text-white peer-checked:font-bold transition-all shadow-lg hover:bg-white/[0.05]">
+                                    S</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="shirt_size" class="peer sr-only" value="M">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 peer-checked:bg-gradient-to-br peer-checked:from-indigo-500 peer-checked:to-teal-400 peer-checked:border-transparent peer-checked:text-white peer-checked:font-bold transition-all shadow-lg hover:bg-white-[0.05]">
+                                    M</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="shirt_size" class="peer sr-only" value="L">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 peer-checked:bg-gradient-to-br peer-checked:from-indigo-500 peer-checked:to-teal-400 peer-checked:border-transparent peer-checked:text-white peer-checked:font-bold transition-all shadow-lg hover:bg-white-[0.05]">
+                                    L</div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="shirt_size" class="peer sr-only" value="XL">
+                                <div
+                                    class="w-12 h-12 flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.02] text-slate-400 peer-checked:bg-gradient-to-br peer-checked:from-indigo-500 peer-checked:to-teal-400 peer-checked:border-transparent peer-checked:text-white peer-checked:font-bold transition-all shadow-lg hover:bg-white-[0.05]">
+                                    XL</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="section-title">
+                        <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
+                        </svg>
+                        Riwayat Sekolah
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div class="space-y-5">
+                            <div>
+                                <label>Nama Sekolah Asal</label>
+                                <input type="text" name="school_origin" placeholder="Mis. SDN 1 Batu" required />
+                            </div>
+                            <div>
+                                <label>NPSN Sekolah</label>
+                                <input type="tel" name="npsn" placeholder="8 Digit Opsional" />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Pendidikan Terakhir Santri</label>
+                            <div class="relative" x-data="{ open: false, selected: '' }">
+                                <button type="button" @click="open = !open" @click.outside="open = false"
+                                    class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 transition-all flex justify-between items-center"
+                                    :class="open ? 'border-teal-500/60 bg-white/[0.06]' : ''">
+                                    <span x-text="selected === '' ? 'Pilih Pendidikan' : selected"
+                                        :class="selected === '' ? 'text-slate-600' : 'text-white'"
+                                        class="truncate">Pilih Pendidikan</span>
+                                    <svg class="w-4 h-4 text-slate-500 shrink-0" :class="open ? 'rotate-180' : ''"
+                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </button>
+                                <input type="hidden" name="last_education_id" x-model="selected" required>
+                                <div x-show="open"
+                                    class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                    style="display: none;">
+                                    <ul class="py-1 text-sm text-slate-300">
+                                        <li><button type="button" @click="selected = 'TK/PAUD'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">TK/PAUD</button>
+                                        </li>
+                                        <li><button type="button" @click="selected = 'SD/MI'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">SD/MI</button>
+                                        </li>
+                                        <li><button type="button" @click="selected = 'SMP/MTs'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">SMP/MTs</button>
+                                        </li>
+                                        <li><button type="button" @click="selected = 'SMA/MA/SMK'; open = false"
+                                                class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 truncate">SMA/MA/SMK</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: Data Orang Tua -->
+                <div class="space-y-5 pt-8">
+
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4 mb-6">
+                        <div
+                            class="w-8 h-8 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold text-sm border border-rose-500/30">
+                            3</div>
+                        <h3 class="text-xl font-bold text-white tracking-wide">Data Pendukung Keluarga</h3>
+                    </div>
+
+                    <div>
+                        <label>Nomor Kartu Keluarga (NO. KK)</label>
+                        <input type="tel" name="family_card_no" placeholder="16 Digit Angka" maxlength="16" required />
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+
+                        <!-- Col 1: Ayah -->
+                        <div class="space-y-4">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-500/10 text-indigo-400 text-[10px] font-bold tracking-widest uppercase border border-indigo-500/20 mb-2">
+                                Ayah Kandung</div>
+
+                            <div><label>Nama Lengkap</label><input type="text" name="father_name"
+                                    placeholder="Nama Ayah" required /></div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div><label>NIK</label><input type="tel" name="father_nik" placeholder="16 Digit"
+                                        maxlength="16" required />
+                                </div>
+                                <div><label>No. WhatsApp</label><input type="tel" name="father_phone"
+                                        placeholder="08..." /></div>
+                            </div>
+                            <div>
+                                <label>Pendidikan Terakhir</label>
+                                <div class="relative" x-data="{ open: false, selected: '', selectedId: '' }">
+                                    <button type="button" @click="open = !open" @click.outside="open = false"
+                                        class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                        :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                        <span x-text="selected === '' ? 'Pilih Pendidikan' : selected"
+                                            :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih
+                                            Pendidikan</span>
+                                        <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                            :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <input type="hidden" name="father_education_id" x-model="selectedId">
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden"
+                                        style="display: none;">
+                                        <ul class="py-1 text-sm text-slate-300">
+                                            <li><button type="button"
+                                                    @click="selected = 'SD/Sederajat'; selectedId = '1'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SD/Sederajat</button>
+                                            </li>
+                                            <li><button type="button"
+                                                    @click="selected = 'SMP/Sederajat'; selectedId = '2'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SMP/Sederajat</button>
+                                            </li>
+                                            <li><button type="button"
+                                                    @click="selected = 'SMA/Sederajat'; selectedId = '3'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SMA/Sederajat</button>
+                                            </li>
+                                            <li><button type="button"
+                                                    @click="selected = 'S1/Diploma'; selectedId = '4'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">S1/Diploma</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label>Pekerjaan Utama</label>
+                                <div class="relative" x-data="{ open: false, selected: '', selectedId: '' }">
+                                    <button type="button" @click="open = !open" @click.outside="open = false"
+                                        class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                        :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                        <span x-text="selected === '' ? 'Pilih Pekerjaan' : selected"
+                                            :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih
+                                            Pekerjaan</span>
+                                        <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                            :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <input type="hidden" name="father_job_id" x-model="selectedId">
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                        style="display: none;">
+                                        <ul class="py-1 text-sm text-slate-300">
+                                            <li><button type="button"
+                                                    @click="selected = 'Karyawan Swasta'; selectedId = '1'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Karyawan
+                                                    Swasta</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Pegawai Negeri'; selectedId = '2'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Pegawai
+                                                    Negeri</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Wiraswasta / Dagang'; selectedId = '3'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Wiraswasta
+                                                    / Dagang</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Petani / Nelayan'; selectedId = '4'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Petani
+                                                    / Nelayan</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Buruh Lepas'; selectedId = '5'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Buruh
+                                                    Lepas</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label>Rata-rata Penghasilan Ayah</label>
+                                <div class="relative" x-data="{ open: false, selected: '', selectedId: '' }">
+                                    <button type="button" @click="open = !open" @click.outside="open = false"
+                                        class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                        :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                        <span x-text="selected === '' ? 'Pilih Rentang' : selected"
+                                            :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih
+                                            Rentang</span>
+                                        <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                            :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <input type="hidden" name="father_income_id" x-model="selectedId">
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                        style="display: none;">
+                                        <ul class="py-1 text-sm text-slate-300">
+                                            <li><button type="button"
+                                                    @click="selected = '< Rp 1.000.000'; selectedId = '1'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">
+                                                    < Rp 1.000.000</button>
+                                            </li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Rp 1.000.000 - Rp 3.000.000'; selectedId = '2'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Rp
+                                                    1.000.000 - Rp 3.000.000</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Rp 3.000.000 - Rp 5.000.000'; selectedId = '3'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Rp
+                                                    3.000.000 - Rp 5.000.000</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = '> Rp 5.000.000'; selectedId = '4'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">>
+                                                    Rp 5.000.000</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Col 2: Ibu -->
+                        <div class="space-y-4">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 text-teal-400 text-[10px] font-bold tracking-widest uppercase border border-teal-500/20 mb-2">
+                                Ibu Kandung</div>
+
+                            <div><label>Nama (Gadis)</label><input type="text" name="mother_name" placeholder="Nama Ibu"
+                                    required /></div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div><label>NIK</label><input type="tel" name="mother_nik" placeholder="16 Digit"
+                                        maxlength="16" required /></div>
+                                <div><label>No. WhatsApp</label><input type="tel" name="mother_phone"
+                                        placeholder="08..." /></div>
+                            </div>
+                            <div>
+                                <label>Pendidikan Terakhir</label>
+                                <div class="relative" x-data="{ open: false, selected: '', selectedId: '' }">
+                                    <button type="button" @click="open = !open" @click.outside="open = false"
+                                        class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                        :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                        <span x-text="selected === '' ? 'Pilih Pendidikan' : selected"
+                                            :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih
+                                            Pendidikan</span>
+                                        <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                            :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <input type="hidden" name="mother_education_id" x-model="selectedId">
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden"
+                                        style="display: none;">
+                                        <ul class="py-1 text-sm text-slate-300">
+                                            <li><button type="button" @click="selected = 'SD/Sederajat'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SD/Sederajat</button>
+                                            </li>
+                                            <li><button type="button" @click="selected = 'SMP/Sederajat'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SMP/Sederajat</button>
+                                            </li>
+                                            <li><button type="button" @click="selected = 'SMA/Sederajat'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">SMA/Sederajat</button>
+                                            </li>
+                                            <li><button type="button" @click="selected = 'S1/Diploma'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">S1/Diploma</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label>Pekerjaan Utama</label>
+                                <div class="relative" x-data="{ open: false, selected: '' }">
+                                    <button type="button" @click="open = !open" @click.outside="open = false"
+                                        class="w-full text-left bg-white/[0.025] hover:bg-white/[0.04] border border-white/10 hover:border-white/20 rounded-xl px-4 py-3.5 text-sm outline-none text-white focus:bg-white/[0.06] focus:border-teal-500/60 focus:ring-4 focus:ring-teal-500/10 transition-all shadow-[inset_0_2px_6px_rgba(0,0,0,0.2)] flex justify-between items-center"
+                                        :class="open ? 'border-teal-500/60 bg-white/[0.06] ring-4 ring-teal-500/10' : ''">
+                                        <span x-text="selected === '' ? 'Pilih Pekerjaan' : selected"
+                                            :class="selected === '' ? 'text-slate-600' : 'text-white'">Pilih
+                                            Pekerjaan</span>
+                                        <svg class="w-4 h-4 text-slate-500 transition-transform duration-300"
+                                            :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                    <input type="hidden" name="mother_job_id" x-model="selected">
+                                    <div x-show="open" x-transition:enter="transition ease-out duration-200"
+                                        x-transition:enter-start="opacity-0 scale-95 -translate-y-2"
+                                        x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                                        x-transition:leave="transition ease-in duration-150"
+                                        class="absolute z-50 w-full mt-2 bg-[#0B1120]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-y-auto max-h-48 custom-scrollbar"
+                                        style="display: none;">
+                                        <ul class="py-1 text-sm text-slate-300">
+                                            <li><button type="button"
+                                                    @click="selected = 'Ibu Rumah Tangga'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Ibu
+                                                    Rumah Tangga</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Karyawan Swasta'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Karyawan
+                                                    Swasta</button></li>
+                                            <li><button type="button" @click="selected = 'Pegawai Negeri'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Pegawai
+                                                    Negeri</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Wiraswasta / Dagang'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Wiraswasta
+                                                    / Dagang</button></li>
+                                            <li><button type="button"
+                                                    @click="selected = 'Petani / Nelayan'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Petani
+                                                    / Nelayan</button></li>
+                                            <li><button type="button" @click="selected = 'Buruh Lepas'; open = false"
+                                                    class="w-full text-left px-4 py-2 hover:bg-teal-500/10 hover:text-teal-400 transition-colors">Buruh
+                                                    Lepas</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 mt-6 border-t border-white/10">
+
+                        <!-- KPS Checkbox -->
+                        <label
+                            class="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/10 cursor-pointer hover:bg-white/[0.05] transition-colors">
+                            <input type="checkbox" name="is_kps" value="1"
+                                class="w-5 h-5 rounded border-white/20 bg-[#05050A] text-teal-500 focus:ring-teal-500/50">
+                            <div>
+                                <p class="text-sm font-bold text-white">Penerima Program Bantuan (PKH/KIP/KPS)</p>
+                                <p class="text-[11px] text-slate-500 mt-0.5">Centang opsi ini jika Anda memiliki kartu
+                                    bantuan sosial dari pemerintah.</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-10 mt-10 border-t border-white/5">
+                    <button type="submit"
+                        class="w-full flex justify-center items-center gap-2 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-teal-500 text-white font-bold hover:from-indigo-500 hover:to-teal-400 transition-all shadow-[0_0_20px_rgba(45,212,191,0.2)] active:scale-[0.98]">
+                        <span>Simpan Seluruh Biodata</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </button>
+                    <p class="text-center text-slate-500 text-xs mt-4">Dengan menyimpan, saya menyatakan seluruh data
+                        yang diisikan adalah benar.</p>
+                </div>
+
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Floating Nav (Menyelaraskan dengan Dashboard) -->
+    <div class="fixed bottom-6 inset-x-0 flex justify-center z-50 px-4">
+        <nav
+            class="floating-nav w-full max-w-sm rounded-[2rem] px-2 py-2 flex justify-between items-center sm:max-w-md">
+
+            <a href="dashboard.html"
+                class="flex flex-col items-center gap-1 p-2 px-5 rounded-xl text-slate-500 hover:text-white hover:bg-white/5 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+                    </path>
+                </svg>
+            </a>
+
+            <a href="form_biodata.html" class="flex items-center gap-2 p-2 px-4 rounded-xl bg-white/10 text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
+                </svg>
+                <span class="text-xs font-bold hidden sm:block">Biodata</span>
+            </a>
+
+            <a href="pdf_formulir.html"
+                class="flex items-center gap-2 p-2 px-5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
+                </svg>
+                <span class="text-xs font-bold hidden sm:block">Berkas</span>
+            </a>
+
+            <a href="index.html"
+                class="flex flex-col items-center gap-1 p-2 px-4 rounded-xl text-slate-500 hover:text-rose-400 hover:bg-rose-500/10 transition-all">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+                    </path>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+
+</body>
+
+</html>
